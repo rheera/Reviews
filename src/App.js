@@ -56,7 +56,7 @@ function App() {
               </button>
             </div>
             <button
-              className="button"
+              className="button mt-4"
               onClick={() => dispatch({ type: "RANDOM" })}
             >
               Surprise Me!

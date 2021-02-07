@@ -1,6 +1,9 @@
 export const reducer = (state, action) => {
   if (action.type === "PREV") {
-    const newIndex = (state.index - 1) % state.list.length;
+    // since JS mod is actually remainder it doesn't work with negative numbers
+    const newIndex =
+      (((state.index - 1) % state.list.length) + state.list.length) %
+      state.list.length;
     console.log(newIndex);
     return {
       ...state,
@@ -14,9 +17,13 @@ export const reducer = (state, action) => {
     };
   }
   if (action.type === "RANDOM") {
+    let newIndex = Math.floor(Math.random() * state.list.length);
+    if (newIndex == state.index) {
+      newIndex = (newIndex + 1) % state.list.length;
+    }
     return {
       ...state,
-      index: Math.floor(Math.random() * state.list.length),
+      index: newIndex,
     };
   }
   throw new Error("no matching action type");
