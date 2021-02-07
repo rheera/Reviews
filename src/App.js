@@ -12,8 +12,18 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1 className={"title has-text-centered"}>Our Reviews</h1>
+        <h1 className={"title is-1 has-text-centered mt-6 pt-6"}>
+          Our Reviews
+        </h1>
       </header>
+      <div
+        style={{
+          background: "hsl(205, 78%, 60%)",
+          height: "0.25rem",
+          width: "5rem",
+          margin: "1rem auto 1rem",
+        }}
+      ></div>
       <section className="section">
         <div className="mx-4 columns has-text-centered is-centered">
           <div className="column is-8-tablet is-5-desktop box">
